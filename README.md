@@ -26,4 +26,4 @@
 
 ## Contact
 <a href="https://www.linkedin.com/in/vitor-vargem-52291b184/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-<a href="https://www.instagram.com/vitor_vvjb?igsh=NTN0Z3E4ZDZ2aHFk&utm_source=qr" target="_blank"><img src="https://img.shields.io/badge/Instagram-0077B5?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+<a href="https://www.instagram.com/vitor_vvjb?igsh=NTN0Z3E4ZDZ2aHFk&utm_source=qr" target="_blank"><img src="https://img.shields.io/badge/Instagram-0077B5?style=for-the-badge&logo=instagram&logoColor=pink" target="_blank"></a>
