@@ -1,4 +1,4 @@
-## 👋 About me
+## 👋 Sobre mim
 
 - 🎓 Monitor técnico de desenvolvimento Fullstack.
 - 🎓 Desenvolvedor de RPA(Automação e robotização de processos) com Python.
@@ -8,7 +8,7 @@
 - 📃 Certificação Direto ao Ponto : Desenvolvimento de RPA.
 - 🔭 Estudando atualmente Robotização de Sofware / Criando Robots <br>
 
-## 📊 Status
+## 📊 Tecnologias dos Projetos
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=vitorvargem27&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="Estatísticas" width="400px" /> 
@@ -16,7 +16,7 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vitorvargem27&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&layout=compact" alt="Linguagens mais usadas" width="300px"  />
 </div>
 
-## 🛠 &nbsp;Tech Stack
+## 🛠 &nbsp; Tecnologias Estudadas
  
 <div>
  
@@ -24,6 +24,6 @@
 
 </div>
 
-## Contact
+## Contatos
 <a href="https://www.linkedin.com/in/vitor-vargem-52291b184/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 <a href="https://www.instagram.com/vitor_vvjb?igsh=NTN0Z3E4ZDZ2aHFk&utm_source=qr" target="_blank"><img src="https://img.shields.io/badge/Instagram-f17ea1.svg?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
