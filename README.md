@@ -1,9 +1,12 @@
 ## 👋 About me
 
-- 🎓 Técnico em Informática.
-- 🎓 Desenvolvedor FullStack.
-- 📃 Certificação Cisco IT Essentials: PC Hardware and Software.
-- 🔭 Estudando atualmente JavaScript, Typescript, React.js, Java, C#. <br>
+- 🎓 Monitor técnico de desenvolvimento Fullstack.
+- 🎓 Desenvolvedor de RPA(Automação e robotização de processos) com Python.
+- 📃 Certificação Instituto da Oportunida Social : Desenvolvimento Web.
+- 📃 Certificação TOTVS : Desenvolvimento Front-End (Angular, Typescript, Javascript, HTML5, CSS3, SCSS).
+- 📃 Certificação Curso em Vídeo : Python 3.
+- 📃 Certificação Direto ao Ponto : Desenvolvimento de RPA.
+- 🔭 Estudando atualmente Robotização de Sofware / Criando Robots <br>
 
 ## 📊 Status
 
