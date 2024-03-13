@@ -1,5 +1,5 @@
 # 💫 About Me:
-- 🎓 Monitor técnico de Desenvolvimento de Software.<br>- 🎓 Desenvolvedor de RPA(Automação e robotização de processos) com Python.<br>- 📃 Certificação Instituto da Oportunidade Social : Desenvolvimento Web.<br>- 📃 Certificação TOTVS : Desenvolvimento Front-End (Angular, Typescript, Javascript, HTML, CSS & SCSS).<br>- 📃 Certificação Curso em Vídeo : Python.<br>- 📃 Certificação Direto ao Ponto : Desenvolvimento de RPA.<br>- 📃 Certificação HCode : Desenvolvimento de API com NodeJs e MongoDB.<br>- 🔭 Estudando atualmente Robotização de Sofware / Criando Robots
+  - 🎓 Monitor técnico de Desenvolvimento de Software.<br>- 🎓 Desenvolvedor de RPA(Automação e robotização de processos) com Python.<br>- 📃 Certificação Instituto da Oportunidade Social : Desenvolvimento Web.<br>- 📃 Certificação TOTVS : Desenvolvimento Front-End (Angular, Typescript, Javascript, HTML, CSS & SCSS).<br>- 📃 Certificação Curso em Vídeo : Python.<br>- 📃 Certificação Direto ao Ponto : Desenvolvimento de RPA.<br>- 📃 Certificação HCode : Desenvolvimento de API com NodeJs e MongoDB.<br>- 🔭 Estudando atualmente Robotização de Sofware / Criando Robots
 
 
 ## 🌐 Socials:
