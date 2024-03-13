@@ -6,6 +6,7 @@
 - 📃 Certificação TOTVS : Desenvolvimento Front-End (Angular, Typescript, Javascript, HTML5, CSS3, SCSS).
 - 📃 Certificação Curso em Vídeo : Python 3.
 - 📃 Certificação Direto ao Ponto : Desenvolvimento de RPA.
+- 📃 Certificação HCode : Desenvolvimento de API com NodeJs e MongoDB.
 - 🔭 Estudando atualmente Robotização de Sofware / Criando Robots <br>
 
 ## 📊 Tecnologias dos Projetos
