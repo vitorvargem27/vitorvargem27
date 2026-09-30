@@ -35,7 +35,7 @@ const vitor: Developer = {
 
 ## 🚀 O que eu faço de melhor
 
-- 👥 **Liderança & Mentoria** — Liderança de equipe, mentoria técnica e comportamental de turmas no programa Start Tech, responsabilidade técnica por produtos e participação no Comitê de IA.
+- 👥 **Liderança & Mentoria** — Liderança de equipe, mentoria técnica e comportamental de programas de aceleração de carreira, responsável técnico por produtos e participação no Comitê de IA TOTVS.
 - ⚙️ **Ecossistema TOTVS** — Apps Angular + PO UI empacotados em `.app` para o SmartClient, builds Angular 17+ compatíveis com o Protheus e troubleshooting do runtime Chromium embarcado (CEF).
 - 🧩 **ADVPL / TLPP** — Fontes, classes, funções e APIs REST no Protheus, incluindo integrações com modelos de linguagem (LLMs).
 - ✨ **IA Generativa** — Criação de agentes de IA, engenharia de prompt, desenvolvimento assistido por IA e LLMs locais com Ollama.
