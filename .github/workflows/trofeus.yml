@@ -1,0 +1,172 @@
+name: Troféus do perfil
+
+on:
+  push:
+    paths:
+      - ".github/workflows/trofeus.yml"
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trofeus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gerar assets/trophies.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+        run: |
+          python3 - <<'PY'
+          import datetime as dt
+          import json
+          import os
+          import urllib.request
+
+          TOKEN = os.environ.get("GITHUB_TOKEN", "")
+          USER = os.environ.get("GH_USER", "vitorvargem27")
+          SAIDA = os.environ.get("SAIDA", "assets/trophies.svg")
+
+          RANKS = ["C", "B", "A", "AA", "AAA", "S", "SS", "SSS"]
+          TROFEUS = [
+              ("commits", "Commits", [1, 10, 100, 200, 500, 700, 1000, 2000]),
+              ("estrelas", "Estrelas", [1, 10, 20, 50, 100, 250, 500, 1200]),
+              ("seguidores", "Seguidores", [1, 10, 20, 50, 100, 200, 500, 1000]),
+              ("repos", "Repositórios", [1, 10, 20, 30, 50, 60, 80, 100]),
+              ("prs", "Pull Requests", [1, 10, 20, 50, 100, 200, 500, 1000]),
+              ("issues", "Issues", [1, 5, 10, 20, 50, 100, 200, 500]),
+              ("anos", "Anos no GitHub", [1, 2, 3, 4, 5, 7, 10, 15]),
+          ]
+          CORES = {  # rank -> (claro, escuro)
+              "SSS": ("#ffe27a", "#e0a800"), "SS": ("#ffe27a", "#e0a800"), "S": ("#ffe27a", "#e0a800"),
+              "AAA": ("#e8edf7", "#9aa5bd"), "AA": ("#e8edf7", "#9aa5bd"), "A": ("#e8edf7", "#9aa5bd"),
+              "B": ("#f3b67a", "#b8662a"), "C": ("#f3b67a", "#b8662a"), "?": ("#565f89", "#3b4261"),
+          }
+
+
+          def gql(query, variables):
+              req = urllib.request.Request(
+                  "https://api.github.com/graphql",
+                  data=json.dumps({"query": query, "variables": variables}).encode(),
+                  headers={"Authorization": f"bearer {TOKEN}", "Content-Type": "application/json",
+                           "User-Agent": "trofeus-perfil"},
+              )
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  dados = json.load(r)
+              if dados.get("errors"):
+                  raise SystemExit(f"Erro na API do GitHub: {dados['errors']}")
+              return dados["data"]
+
+
+          def coletar():
+              q = """query($login:String!,$cursor:String){ user(login:$login){
+                createdAt followers{totalCount} pullRequests{totalCount} issues{totalCount}
+                repositories(first:100, after:$cursor, ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC){
+                  totalCount pageInfo{hasNextPage endCursor} nodes{stargazerCount} } } }"""
+              cursor, estrelas = None, 0
+              while True:
+                  u = gql(q, {"login": USER, "cursor": cursor})["user"]
+                  repos = u["repositories"]
+                  estrelas += sum(n["stargazerCount"] for n in repos["nodes"])
+                  if not repos["pageInfo"]["hasNextPage"]:
+                      break
+                  cursor = repos["pageInfo"]["endCursor"]
+
+              criado = dt.datetime.fromisoformat(u["createdAt"].replace("Z", "+00:00"))
+              agora = dt.datetime.now(dt.timezone.utc)
+              qc = """query($login:String!,$from:DateTime!,$to:DateTime!){ user(login:$login){
+                contributionsCollection(from:$from,to:$to){ totalCommitContributions restrictedContributionsCount } } }"""
+              commits = 0
+              for ano in range(criado.year, agora.year + 1):
+                  ini = max(dt.datetime(ano, 1, 1, tzinfo=dt.timezone.utc), criado)
+                  fim = min(dt.datetime(ano, 12, 31, 23, 59, 59, tzinfo=dt.timezone.utc), agora)
+                  c = gql(qc, {"login": USER, "from": ini.isoformat(), "to": fim.isoformat()})
+                  cc = c["user"]["contributionsCollection"]
+                  commits += cc["totalCommitContributions"] + cc["restrictedContributionsCount"]
+
+              return {
+                  "commits": commits,
+                  "estrelas": estrelas,
+                  "seguidores": u["followers"]["totalCount"],
+                  "repos": repos["totalCount"],
+                  "prs": u["pullRequests"]["totalCount"],
+                  "issues": u["issues"]["totalCount"],
+                  "anos": int((agora - criado).days // 365),
+              }
+
+
+          def rank_de(valor, limites):
+              rank, prox = "?", limites[0]
+              for i, lim in enumerate(limites):
+                  if valor >= lim:
+                      rank = RANKS[i]
+                      prox = limites[i + 1] if i + 1 < len(limites) else None
+              if prox is None:
+                  progresso = 1.0
+              else:
+                  base = 0 if rank == "?" else limites[RANKS.index(rank)]
+                  progresso = max(0.0, min(1.0, (valor - base) / (prox - base)))
+              return rank, progresso
+
+
+          def fmt(n):
+              return f"{n/1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
+
+
+          def card(i, titulo, valor, limites):
+              rank, prog = rank_de(valor, limites)
+              claro, escuro = CORES[rank]
+              x = i * 114
+              tamanho_rank = 15 if len(rank) <= 1 else (13 if len(rank) == 2 else 11)
+              return f"""
+            <g class="c" style="animation-delay:{i*0.12:.2f}s" transform="translate({x},0)">
+              <rect x="0.5" y="0.5" width="109" height="109" rx="10" fill="#1a1b27" stroke="#292e42"/>
+              <defs><linearGradient id="t{i}" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="{claro}"/><stop offset="1" stop-color="{escuro}"/></linearGradient></defs>
+              <g transform="translate(55,34)" fill="url(#t{i})">
+                <path d="M-15,-20 H15 V-6 C15,6 7,12 0,12 C-7,12 -15,6 -15,-6 Z"/>
+                <path d="M-15,-15 H-21 C-24,-15 -24,-3 -14,1 L-13,-2 C-19,-5 -19,-11 -17,-11 H-15 Z"/>
+                <path d="M15,-15 H21 C24,-15 24,-3 14,1 L13,-2 C19,-5 19,-11 17,-11 H15 Z"/>
+                <rect x="-3" y="11" width="6" height="6"/><rect x="-10" y="17" width="20" height="5" rx="1.5"/>
+                <text y="-1" text-anchor="middle" font-size="{tamanho_rank}" font-weight="800" fill="#1a1b27">{rank}</text>
+              </g>
+              <text x="55" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#7aa2f7">{titulo}</text>
+              <text x="55" y="91" text-anchor="middle" font-size="13" font-weight="700" fill="#c0caf5">{fmt(valor)}</text>
+              <rect x="15" y="98" width="80" height="4" rx="2" fill="#292e42"/>
+              <rect x="15" y="98" width="{80*prog:.1f}" height="4" rx="2" fill="#bb9af7"/>
+            </g>"""
+
+
+          def render(stats):
+              cards = "".join(card(i, t, stats[k], lim) for i, (k, t, lim) in enumerate(TROFEUS))
+              largura = len(TROFEUS) * 114 - 4
+              return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {largura} 110" width="{largura}" height="110">
+            <style>
+              text {{ font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; }}
+              .c {{ animation: surgir .6s ease-out both; }}
+              @keyframes surgir {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
+            </style>{cards}
+          </svg>
+          """
+
+
+          if __name__ == "__main__":
+              stats = json.loads(os.environ["MOCK"]) if os.environ.get("MOCK") else coletar()
+              print("Estatísticas:", stats)
+              os.makedirs(os.path.dirname(SAIDA) or ".", exist_ok=True)
+              with open(SAIDA, "w", encoding="utf-8") as f:
+                  f.write(render(stats))
+              print("Gerado:", SAIDA)
+          PY
+
+      - name: Salvar no repositório
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/trophies.svg
+          git diff --cached --quiet || (git commit -m "Atualiza troféus do perfil" && git push)
