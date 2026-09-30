@@ -38,7 +38,7 @@ const vitor: Developer = {
 - 👥 **Liderança & Mentoria** — Liderança de equipe, mentoria técnica e comportamental de programas de aceleração de carreira, responsável técnico por produtos e participação no Comitê de IA TOTVS.
 - ⚙️ **Ecossistema TOTVS** — Apps Angular + PO UI empacotados em `.app` para o SmartClient, builds Angular 17+ compatíveis com o Protheus e troubleshooting do runtime Chromium embarcado (CEF).
 - 🧩 **ADVPL / TLPP** — Fontes, classes, funções e APIs REST no Protheus, incluindo integrações com modelos de linguagem (LLMs).
-- ✨ **IA Generativa** — Criação de agentes de IA, engenharia de prompt, desenvolvimento assistido por IA e LLMs locais com Ollama.
+- ✨ **IA Generativa** — Criação de agentes de IA, engenharia de prompt, desenvolvimento assistido por IA e LLMs locais com LLMs prontas e desenvolvendo também LLM para minha própria necessidade.
 - 🧠 **Machine Learning** — Motores de scoring multifatorial, clusterização e predição com scikit-learn, Pandas e NumPy.
 - ☁️ **Dados & BI** — Dashboards analíticos com Google Cloud, BigQuery e Looker Studio.
 - 🔐 **Autenticação** — Login com Google OAuth e controle de acesso por allowlist.
