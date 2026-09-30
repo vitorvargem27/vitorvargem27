@@ -1,13 +1,12 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1b27,50:7aa2f7,100:bb9af7&height=220&section=header&text=Vitor%20Vargem&fontSize=52&fontColor=ffffff&fontAlignY=36&desc=Software%20Engineer%20%40%20TOTVS%20%E2%80%A2%20IA%20%26%20Machine%20Learning&descSize=18&descAlignY=58&animation=fadeIn" width="100%" />
+<img src="./assets/header.svg" width="100%" alt="Vitor Vargem — Software Engineer @ TOTVS" />
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=7AA2F7&center=true&vCenter=true&width=600&lines=Software+Engineer+%40+TOTVS;Angular+%2B+PO+UI+%2B+TypeScript;ADVPL+%2F+TLPP+no+Protheus;IA+Generativa+e+Agentes+de+IA;Machine+Learning+com+Python" alt="Typing SVG" />
 
 <br/>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyBmaWxsPSJ3aGl0ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCI%2BPHBhdGggZD0iTTExNiAzSDEyYTguOTEgOC45MSAwIDAwLTkgOC44djEwNC40MmE4LjkxIDguOTEgMCAwMDkgOC43OGgxMDRhOC45MyA4LjkzIDAgMDA5LTguODFWMTEuNzdBOC45MyA4LjkzIDAgMDAxMTYgM3pNMzkuMTcgMTA3SDIxLjA2VjQ4LjczaDE4LjExem0tOS02Ni4yMWExMC41IDEwLjUgMCAxMTEwLjQ5LTEwLjUgMTAuNSAxMC41IDAgMDEtMTAuNTQgMTAuNDh6TTEwNyAxMDdIODguODlWNzguNjVjMC02Ljc1LS4xMi0xNS40NC05LjQxLTE1LjQ0cy0xMC44NyA3LjM2LTEwLjg3IDE1VjEwN0g1MC41M1Y0OC43M2gxNy4zNnY4aC4yNGMyLjQyLTQuNTggOC4zMi05LjQxIDE3LjEzLTkuNDFDMTAzLjYgNDcuMjggMTA3IDU5LjM1IDEwNyA3NXoiLz48L3N2Zz4%3D)](https://www.linkedin.com/in/vitor-vargem-52291b184/)
-[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-1a1b27?style=for-the-badge&logo=githubpages&logoColor=white)](https://vitorvargem27.github.io)
 ![Visitas](https://komarev.com/ghpvc/?username=vitorvargem27&color=7aa2f7&style=for-the-badge&label=VISITAS)
 
 </div>
@@ -38,7 +37,7 @@ const vitor: Developer = {
 - 👥 **Liderança & Mentoria** — Liderança de equipe, mentoria técnica e comportamental de programas de aceleração de carreira, responsável técnico por produtos e participação no Comitê de IA TOTVS.
 - ⚙️ **Ecossistema TOTVS** — Apps Angular + PO UI empacotados em `.app` para o SmartClient, builds Angular 17+ compatíveis com o Protheus e troubleshooting do runtime Chromium embarcado (CEF).
 - 🧩 **ADVPL / TLPP** — Fontes, classes, funções e APIs REST no Protheus, incluindo integrações com modelos de linguagem (LLMs).
-- ✨ **IA Generativa** — Criação de agentes de IA, engenharia de prompt, desenvolvimento assistido por IA e LLMs locais com LLMs prontas e desenvolvendo também LLM para minha própria necessidade.
+- ✨ **IA Generativa** — Criação de agentes de IA, engenharia de prompt, desenvolvimento assistido por IA e LLMs locais, tanto prontas quanto desenvolvidas por mim para minhas próprias necessidades.
 - 🧠 **Machine Learning** — Motores de scoring multifatorial, clusterização e predição com scikit-learn, Pandas e NumPy.
 - ☁️ **Dados & BI** — Dashboards analíticos com Google Cloud, BigQuery e Looker Studio.
 - 🔐 **Autenticação** — Login com Google OAuth e controle de acesso por allowlist.
@@ -139,7 +138,7 @@ const vitor: Developer = {
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=vitorvargem27&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1&column=7" />
+<img src="./assets/trophies.svg" width="100%" alt="Troféus do GitHub de Vitor Vargem" />
 
 </div>
 
@@ -159,6 +158,6 @@ const vitor: Developer = {
 
 [![LinkedIn](https://img.shields.io/badge/Conecte--se%20no%20LinkedIn-0A66C2?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyBmaWxsPSJ3aGl0ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCI%2BPHBhdGggZD0iTTExNiAzSDEyYTguOTEgOC45MSAwIDAwLTkgOC44djEwNC40MmE4LjkxIDguOTEgMCAwMDkgOC43OGgxMDRhOC45MyA4LjkzIDAgMDA5LTguODFWMTEuNzdBOC45MyA4LjkzIDAgMDAxMTYgM3pNMzkuMTcgMTA3SDIxLjA2VjQ4LjczaDE4LjExem0tOS02Ni4yMWExMC41IDEwLjUgMCAxMTEwLjQ5LTEwLjUgMTAuNSAxMC41IDAgMDEtMTAuNTQgMTAuNDh6TTEwNyAxMDdIODguODlWNzguNjVjMC02Ljc1LS4xMi0xNS40NC05LjQxLTE1LjQ0cy0xMC44NyA3LjM2LTEwLjg3IDE1VjEwN0g1MC41M1Y0OC43M2gxNy4zNnY4aC4yNGMyLjQyLTQuNTggOC4zMi05LjQxIDE3LjEzLTkuNDFDMTAzLjYgNDcuMjggMTA3IDU5LjM1IDEwNyA3NXoiLz48L3N2Zz4%3D)](https://www.linkedin.com/in/vitor-vargem-52291b184/)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:bb9af7,50:7aa2f7,100:1a1b27&height=120&section=footer" width="100%" />
+<img src="./assets/footer.svg" width="100%" alt="" />
 
 </div>
